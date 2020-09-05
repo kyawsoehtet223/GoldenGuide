@@ -1,19 +1,14 @@
-package com.best.goldenguide.model;
+package com.best.goldenguide.dto;
 
-import java.io.Serializable;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-@Entity
-public class City implements Serializable {
+import org.springframework.web.multipart.MultipartFile;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+import com.best.goldenguide.model.State;
+
+public class CityDTO {
+
 	private Long id;
 	private String name;
 	
@@ -22,57 +17,58 @@ public class City implements Serializable {
 	private State state=new State();
 	private String description;
 	private String url;
+	private MultipartFile file;
 	
-	public City() {
+	public CityDTO() {
 		
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public State getState() {
 		return state;
 	}
+
 	public void setState(State state) {
 		this.state = state;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public String getUrl() {
 		return url;
 	}
+
 	public void setUrl(String url) {
 		this.url = url;
 	}
 
-	public City(Long id, String name, State state, String description, String url) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.state = state;
-		this.description = description;
-		this.url = url;
+	public MultipartFile getFile() {
+		return file;
 	}
 
-	public City(String name, State state, String description, String url) {
-		super();
-		this.name = name;
-		this.state = state;
-		this.description = description;
-		this.url = url;
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 	
 }
