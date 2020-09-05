@@ -11,13 +11,13 @@ import com.best.goldenguide.dto.CityDTO;
 import com.best.goldenguide.model.Hotel;
 import com.best.goldenguide.model.Restaurant;
 import com.best.goldenguide.model.State;
-import com.best.goldenguide.service.StateAndCityServices;
+import com.best.goldenguide.service.GoldenGuideServices;
 
 @Controller
-public class CityAndStateController {
+public class GoldenGuideController {
 
 	@Autowired
-	private StateAndCityServices service;
+	private GoldenGuideServices service;
 	
 	@RequestMapping(value="/addCity.htm",method=RequestMethod.GET)
 	public String add_city(Model m) {
