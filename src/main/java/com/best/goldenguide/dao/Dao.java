@@ -37,6 +37,7 @@ public class Dao {
 	}
 	
 	public List<City> getCityList(){
+		Session session=sessionfactory.openSession();
 		Criteria cr=getSession().createCriteria(City.class);
 		return (List<City>)cr.list();
 	}
@@ -47,7 +48,7 @@ public class Dao {
 	
 	public List<Hotel> getHotelList(){
 		Criteria cr=getSession().createCriteria(Hotel.class);
-		return (List<Hotel>)cr.list();
+		return (List<Hotel>) cr.list();
 	}
 	
 	public void saveRestaurant(Restaurant restaurant) {
