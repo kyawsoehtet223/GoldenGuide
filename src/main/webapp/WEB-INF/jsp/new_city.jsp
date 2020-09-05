@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h3>Add New City</h3>
-	<form:form action="save_city" method="POST" modelAttribute="City" enctype="multipart/form-data">
+	<form:form action="addCity.htm" method="POST" modelAttribute="City" enctype="multipart/form-data">
 	City Name: <form:input path="name" /><form:errors path="name" cssClass="error"></form:errors> <br>
 	Description: <form:input path="description" /> </br>
 	Select Image Url: <input type="file" name="file"/>  
