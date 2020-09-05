@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.best.goldenguide.dao.Dao;
 import com.best.goldenguide.dto.CityDTO;
 import com.best.goldenguide.model.City;
+import com.best.goldenguide.model.State;
 
 @Service
 @Transactional
@@ -49,5 +50,13 @@ public class CityServices {
 	
 	public List<City> getCityList(){
 		return dao.getCityList();
+	}
+	
+	public void saveState(State s) {
+		dao.saveState(s);
+	}
+	
+	public List<State> getStateList(){
+		return dao.getStateList();
 	}
 }
