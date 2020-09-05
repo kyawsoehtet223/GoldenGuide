@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.best.goldenguide.dto.CityDTO;
 import com.best.goldenguide.model.City;
 import com.best.goldenguide.model.State;
-import com.best.goldenguide.repository.CityRepository;
 import com.best.goldenguide.service.CityServices;
 
 @Controller

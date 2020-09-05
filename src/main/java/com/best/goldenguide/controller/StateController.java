@@ -16,45 +16,40 @@ public class StateController {
 
 	@Autowired
 	private CityServices city_service;
-	
-<<<<<<< HEAD
 
-=======
 	@RequestMapping(value="/addCity.htm",method=RequestMethod.GET)
 	public String add_city(Model m) {
 		m.addAttribute("city",new CityDTO());
-		m.addAttribute("state_list",city_service.getCityList());
-		return "";
+		m.addAttribute("cityList",city_service.getCityList());
+		return "new_city";
 	}
->>>>>>> master
-	
 	@RequestMapping(value = "/addCity.htm",method = RequestMethod.POST)
 	public String save_city(@ModelAttribute(value = "city") CityDTO city) {
 		city_service.saveCity(city);
-		return "redirect:/";
+		return "redirect:/listCity.htm";
 	}
 	
 	@RequestMapping(value = "/listCity.htm")
 	public String show_city(Model m) {
 		m.addAttribute("cities",city_service.getCityList());
-		return "";
+		return "city_list";
 	}
 	
 	@RequestMapping(value = "/addState.htm", method = RequestMethod.GET)
 	public String add_state(Model m) {
 		m.addAttribute("state",new State());
-		return "";
+		return "new_state";
 	}
 	
 	@RequestMapping(value = "/addState.htm", method = RequestMethod.POST)
 	public String save_state(@ModelAttribute(value = "state") State state) {
 		city_service.saveState(state);
-		return "redirect:/";
+		return "redirect:/listState.htm";
 	}
 	
 	@RequestMapping(value = "/listState.htm")
 	public String show_state(Model m) {
 		m.addAttribute("states",city_service.getStateList());
-		return "";
+		return "state_list";
 	}
 }

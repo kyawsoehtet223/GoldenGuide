@@ -8,9 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
+	<form:form action="addCity.htm" method="POST" modelAttribute="City" enctype="multipart/form-data">
+	
+</form:form>
 		<ul> 
-		<c:forEach var="par" items="${cityList}" var="c">
+		<c:forEach var="par" items="${cities}" var="c">
 
            <li>${c.id}</li>
 			<li>${c.name}</li>

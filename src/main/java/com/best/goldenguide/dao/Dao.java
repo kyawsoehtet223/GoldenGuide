@@ -35,6 +35,7 @@ public class Dao {
 	}
 	
 	public List<City> getCityList(){
+		Session session=sessionfactory.openSession();
 		Criteria cr=getSession().createCriteria(City.class);
 		return (List<City>)cr.list();
 	}
