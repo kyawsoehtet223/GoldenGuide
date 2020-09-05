@@ -17,7 +17,16 @@ public class StateController {
 	@Autowired
 	private CityServices city_service;
 	
+<<<<<<< HEAD
 
+=======
+	@RequestMapping(value="/addCity.htm",method=RequestMethod.GET)
+	public String add_city(Model m) {
+		m.addAttribute("city",new CityDTO());
+		m.addAttribute("state_list",city_service.getCityList());
+		return "";
+	}
+>>>>>>> master
 	
 	@RequestMapping(value = "/addCity.htm",method = RequestMethod.POST)
 	public String save_city(@ModelAttribute(value = "city") CityDTO city) {
