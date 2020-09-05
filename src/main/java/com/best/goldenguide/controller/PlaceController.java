@@ -20,8 +20,8 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.best.goldenguide.dto.CityDTO;
 import com.best.goldenguide.dto.PlaceDto;
+import com.best.goldenguide.service.GoldenGuideServices;
 import com.best.goldenguide.service.PlaceService;
-import com.best.goldenguide.service.StateAndCityServices;
 
 
 @Controller
@@ -30,7 +30,7 @@ public class PlaceController {
 	 @Autowired
 	 PlaceService placeService;
 	 @Autowired
-	private StateAndCityServices service;
+	private GoldenGuideServices service;
 	 @RequestMapping(value="/add_place.htm")
 		public String addPlace(Model model) {
 			model.addAttribute("places", new PlaceDto());

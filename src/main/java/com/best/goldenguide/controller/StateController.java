@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.best.goldenguide.dto.CityDTO;
 import com.best.goldenguide.model.State;
-import com.best.goldenguide.service.CityServices;
+import com.best.goldenguide.service.GoldenGuideServices;
 
 @Controller
 public class StateController {
 
 	@Autowired
-	private CityServices city_service;
+	private GoldenGuideServices city_service;
 
 	@RequestMapping(value="/addCity.htm",method=RequestMethod.GET)
 	public String add_city(Model m) {

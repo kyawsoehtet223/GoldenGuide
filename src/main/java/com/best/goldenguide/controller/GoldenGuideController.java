@@ -11,13 +11,13 @@ import com.best.goldenguide.dto.CityDTO;
 import com.best.goldenguide.model.Hotel;
 import com.best.goldenguide.model.Restaurant;
 import com.best.goldenguide.model.State;
-import com.best.goldenguide.service.StateAndCityServices;
+import com.best.goldenguide.service.GoldenGuideServices;
 
 @Controller
-public class CityAndStateController {
+public class GoldenGuideController {
 
 	@Autowired
-	private StateAndCityServices service;
+	private GoldenGuideServices service;
 	
 	@RequestMapping(value="/addCity.htm",method=RequestMethod.GET)
 	public String add_city(Model m) {
@@ -59,36 +59,36 @@ public class CityAndStateController {
 	@RequestMapping(value = "/addHotel.htm", method = RequestMethod.GET)
 	public String add_hotel(Model m) {
 		m.addAttribute("hotel",new Hotel());
-		return "new_hotel";
+		return "";
 	}
 	
 	@RequestMapping(value = "/addHotel.htm", method = RequestMethod.POST)
 	public String save_hotel(@ModelAttribute(value = "hotel") Hotel hotel) {
 		service.saveHotel(hotel);
-		return "redirect:/listHotel.htm";
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/listHotel.htm")
 	public String show_hotel(Model m) {
 		m.addAttribute("hotels",service.getHotelList());
-		return "hotel_list";
+		return "";
 	}
 	
 	@RequestMapping(value = "/addRestaurant.htm", method = RequestMethod.GET)
 	public String add_restaurant(Model m) {
 		m.addAttribute("restaurant",new Restaurant());
-		return "new_restaurant";
+		return "";
 	}
 	
 	@RequestMapping(value = "/addRestaurant.htm", method = RequestMethod.POST)
 	public String save_restaurant(@ModelAttribute(value = "restaurant") Restaurant restaurant) {
 		service.saveRestaurant(restaurant);
-		return "redirect:/listRestaurant.htm";
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/listRestaurant.htm")
 	public String show_restaurant(Model m) {
 		m.addAttribute("restaurants",service.getRestaurantList());
-		return "restaurant_list";
+		return "";
 	}
 }
