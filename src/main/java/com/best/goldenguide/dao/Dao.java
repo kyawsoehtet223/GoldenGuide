@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.best.goldenguide.model.City;
+import com.best.goldenguide.model.Hotel;
+import com.best.goldenguide.model.Restaurant;
 import com.best.goldenguide.model.State;
 
 @Repository
@@ -37,5 +39,23 @@ public class Dao {
 	public List<City> getCityList(){
 		Criteria cr=getSession().createCriteria(City.class);
 		return (List<City>)cr.list();
+	}
+	
+	public void saveHotel(Hotel hotel) {
+		getSession().save(hotel);
+	}
+	
+	public List<Hotel> getHotelList(){
+		Criteria cr=getSession().createCriteria(Hotel.class);
+		return (List<Hotel>) cr.list();
+	}
+	
+	public void saveRestaurant(Restaurant restaurant) {
+		getSession().save(restaurant);
+	}
+	
+	public List<Restaurant> getRestaurantList(){
+		Criteria cr=getSession().createCriteria(Restaurant.class);
+		return (List<Restaurant>) cr.list();
 	}
 }

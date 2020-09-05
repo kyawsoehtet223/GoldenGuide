@@ -14,11 +14,13 @@ import org.springframework.stereotype.Service;
 import com.best.goldenguide.dao.Dao;
 import com.best.goldenguide.dto.CityDTO;
 import com.best.goldenguide.model.City;
+import com.best.goldenguide.model.Hotel;
+import com.best.goldenguide.model.Restaurant;
 import com.best.goldenguide.model.State;
 
 @Service
 @Transactional
-public class CityServices {
+public class StateAndCityServices {
 
 	@Autowired
 	Dao dao;
@@ -58,5 +60,21 @@ public class CityServices {
 	
 	public List<State> getStateList(){
 		return dao.getStateList();
+	}
+	
+	public void saveHotel(Hotel h) {
+		dao.saveHotel(h);
+	}
+	
+	public List<Hotel> getHotelList(){
+		return dao.getHotelList();
+	}
+	
+	public void saveRestaurant(Restaurant r) {
+		dao.saveRestaurant(r);
+	}
+	
+	public List<Restaurant> getRestaurantList(){
+		return dao.getRestaurantList();
 	}
 }
