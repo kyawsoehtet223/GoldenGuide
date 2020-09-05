@@ -20,7 +20,7 @@ import com.best.goldenguide.model.State;
 
 @Service
 @Transactional
-public class StateAndCityServices {
+public class GoldenGuideServices {
 
 	@Autowired
 	Dao dao;

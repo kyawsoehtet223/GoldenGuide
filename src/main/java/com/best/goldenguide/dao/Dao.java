@@ -47,7 +47,7 @@ public class Dao {
 	
 	public List<Hotel> getHotelList(){
 		Criteria cr=getSession().createCriteria(Hotel.class);
-		return (List<Hotel>) cr.list();
+		return (List<Hotel>)cr.list();
 	}
 	
 	public void saveRestaurant(Restaurant restaurant) {
@@ -56,6 +56,6 @@ public class Dao {
 	
 	public List<Restaurant> getRestaurantList(){
 		Criteria cr=getSession().createCriteria(Restaurant.class);
-		return (List<Restaurant>) cr.list();
+		return (List<Restaurant>)cr.list();
 	}
 }
