@@ -1,11 +1,14 @@
 package com.best.goldenguide.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class State implements Serializable {
@@ -14,6 +17,9 @@ public class State implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
+	
+	@OneToMany(mappedBy="state", cascade=CascadeType.ALL)
+	private Set<City> cityList;
 	
 	public State() {
 		
@@ -30,6 +36,14 @@ public class State implements Serializable {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Set<City> getCityList() {
+		return cityList;
+	}
+
+	public void setCityList(Set<City> cityList) {
+		this.cityList = cityList;
 	}
 	
 	

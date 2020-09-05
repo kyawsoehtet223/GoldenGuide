@@ -1,12 +1,16 @@
 package com.best.goldenguide.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -17,9 +21,13 @@ public class City implements Serializable {
 	private Long id;
 	private String name;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "state_id")
 	private State state=new State();
+	
+	@OneToMany(mappedBy="city", cascade=CascadeType.ALL)
+	private Set<Place> placeList;
+	
 	private String description;
 	private String url;
 	
@@ -56,6 +64,13 @@ public class City implements Serializable {
 	}
 	public void setUrl(String url) {
 		this.url = url;
+	}
+	public Set<Place> getPlaceList() {
+		return placeList;
+	}
+
+	public void setPlaceList(Set<Place> placeList) {
+		this.placeList = placeList;
 	}
 
 	public City(Long id, String name, State state, String description, String url) {
