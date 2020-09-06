@@ -2,6 +2,7 @@ package com.goldenguide.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,9 +15,11 @@ import com.goldenguide.model.State;
 @Transactional
 
 public class GoldenGuideService {
+	@Autowired
+	GoldenGuideDao goldenguidedao;
 	public List<State> getStateList(){
 		System.out.println("Show State List");
-		return GoldenGuideDao.getStateList();
+		return goldenguidedao.getStateList();
 	}
 
 }
