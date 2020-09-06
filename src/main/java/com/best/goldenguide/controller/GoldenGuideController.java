@@ -22,73 +22,73 @@ public class GoldenGuideController {
 	@RequestMapping(value="/addCity.htm",method=RequestMethod.GET)
 	public String add_city(Model m) {
 		m.addAttribute("city",new CityDTO());
-		m.addAttribute("state_list",service.getCityList());
-		return "";
+		m.addAttribute("cityList",service.getCityList());
+		return "new_city";
 	}
 	
 	@RequestMapping(value = "/addCity.htm",method = RequestMethod.POST)
 	public String save_city(@ModelAttribute(value = "city") CityDTO city) {
 		service.saveCity(city);
-		return "redirect:/";
+		return "redirect:/listCity.htm";
 	}
 	
 	@RequestMapping(value = "/listCity.htm")
 	public String show_city(Model m) {
 		m.addAttribute("cities",service.getCityList());
-		return "";
+		return "city_list";
 	}
 	
 	@RequestMapping(value = "/addState.htm", method = RequestMethod.GET)
 	public String add_state(Model m) {
 		m.addAttribute("state",new State());
-		return "";
+		return "new_state";
 	}
 	
 	@RequestMapping(value = "/addState.htm", method = RequestMethod.POST)
 	public String save_state(@ModelAttribute(value = "state") State state) {
 		service.saveState(state);
-		return "redirect:/";
+		return "redirect:/listState.htm";
 	}
 	
 	@RequestMapping(value = "/listState.htm")
 	public String show_state(Model m) {
 		m.addAttribute("states",service.getStateList());
-		return "";
+		return "state_list";
 	}
 	
 	@RequestMapping(value = "/addHotel.htm", method = RequestMethod.GET)
 	public String add_hotel(Model m) {
 		m.addAttribute("hotel",new Hotel());
-		return "";
+		return "new_hotel";
 	}
 	
 	@RequestMapping(value = "/addHotel.htm", method = RequestMethod.POST)
 	public String save_hotel(@ModelAttribute(value = "hotel") Hotel hotel) {
 		service.saveHotel(hotel);
-		return "redirect:/";
+		return "redirect:/listHotel.htm";
 	}
 	
 	@RequestMapping(value = "/listHotel.htm")
 	public String show_hotel(Model m) {
 		m.addAttribute("hotels",service.getHotelList());
-		return "";
+		return "hotel_list";
 	}
 	
 	@RequestMapping(value = "/addRestaurant.htm", method = RequestMethod.GET)
 	public String add_restaurant(Model m) {
 		m.addAttribute("restaurant",new Restaurant());
-		return "";
+		return "new_restaurant";
 	}
 	
 	@RequestMapping(value = "/addRestaurant.htm", method = RequestMethod.POST)
 	public String save_restaurant(@ModelAttribute(value = "restaurant") Restaurant restaurant) {
 		service.saveRestaurant(restaurant);
-		return "redirect:/";
+		return "redirect:/listRestaurant.htm";
 	}
 	
 	@RequestMapping(value = "/listRestaurant.htm")
 	public String show_restaurant(Model m) {
 		m.addAttribute("restaurants",service.getRestaurantList());
-		return "";
+		return "restaurant_list";
 	}
 }

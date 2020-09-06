@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+      <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>Add New Restaurant</h3>
-	<form:form action="addRestaurant.htm" method="POST" modelAttribute="Restaurant" enctype="multipart/form-data">
-	Restaurant Name: <form:input path="name" /><form:errors path="name" cssClass="error"></form:errors> <br>
-	Type: <form:input path="type" /> </br>
-	location: <form:input path="location" /> </br>
+	<h3>Add New Places</h3>
+	<form:form action="addPlace.htm" method="POST" modelAttribute="Place" enctype="multipart/form-data">
+	Place Name: <form:input path="name" /><form:errors path="name" cssClass="error"></form:errors> <br>
+	Place Type: <form:input path="type" /> </br>
+	Location: <form:input path="location" /> </br>
+	Description: <form:input path="description" /> </br>
 	Select Image Url: <input type="file" name="file"/>  
     <input type="submit" value="Upload File"/> </br>
 	<label for="state">City:</label>
@@ -25,6 +26,5 @@
 
 <input type="submit" value="Add" />
 </form:form>
-	
 </body>
 </html>
