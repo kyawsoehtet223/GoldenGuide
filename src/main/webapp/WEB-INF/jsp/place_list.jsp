@@ -8,19 +8,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<ul> 
+		<c:forEach var="par" items="${places}" var="p">
 
-		<ul> 
-		<c:forEach var="par" items="${cities}" var="c">
-
-           <li>${c.id}</li>
-			<li>${c.name}</li>
-			<li>${c.description}</li>
-			<li>${c.url}</li>
-			<li>${c.state.name}</li>
+           <li>${p.id}</li>
+			<li>${p.name}</li>
+			<li>${p.type}</li>
+			<li>${p.location}</li>
+			<li>${p.url}</li>
+			<li>${p.city.name}</li>
 
         </c:forEach>
 			
 		</ul>
-	
 </body>
 </html>

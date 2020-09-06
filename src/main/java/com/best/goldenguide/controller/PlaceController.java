@@ -31,18 +31,18 @@ public class PlaceController {
 	 PlaceService placeService;
 	 @Autowired
 	private GoldenGuideServices service;
-	 @RequestMapping(value="/add_place.htm")
+	 @RequestMapping(value="/addPlace.htm")
 		public String addPlace(Model model) {
 			model.addAttribute("places", new PlaceDto());
-			model.addAttribute("cityList", service.getCityList());
-			return "add_place";
+			model.addAttribute("placeList", service.getCityList());
+			return "new_place";
 		}
-		@RequestMapping(value="/add_place.htm",method = RequestMethod.POST)
+		@RequestMapping(value="/addPlace.htm",method = RequestMethod.POST)
 		public String savePlace(@ModelAttribute(value="places") PlaceDto pd) {
 			placeService.savePlace(pd);;
-			return "redirect:/place_list.htm";
+			return "redirect:/listPlace.htm";
 		}
-		@RequestMapping(value="/place_list.htm")
+		@RequestMapping(value="/listPlace.htm")
 		public String showPlace(Model model) {
 			model.addAttribute("places", placeService.getPlaceList());
 			return "place_list";
