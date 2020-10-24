@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h3>Add New Places</h3>
-	<form:form action="addPlace.htm" method="POST" modelAttribute="Place" enctype="multipart/form-data">
+	<form:form action="addPlace.htm" method="POST" modelAttribute="places" enctype="multipart/form-data">
 	Place Name: <form:input path="name" /><form:errors path="name" cssClass="error"></form:errors> <br>
 	Place Type: <form:input path="type" /> </br>
 	Location: <form:input path="location" /> </br>

@@ -27,7 +27,8 @@ public class City implements Serializable {
 	
 	@OneToMany(mappedBy="city", cascade=CascadeType.ALL)
 	private Set<Place> placeList;
-	
+	@OneToMany(mappedBy="city", cascade=CascadeType.ALL)
+	private Set<CityImages> cityImagesList;
 	private String description;
 	private String url;
 	
@@ -71,6 +72,14 @@ public class City implements Serializable {
 
 	public void setPlaceList(Set<Place> placeList) {
 		this.placeList = placeList;
+	}
+
+	public Set<CityImages> getCityImagesList() {
+		return cityImagesList;
+	}
+
+	public void setCityImagesList(Set<CityImages> cityImagesList) {
+		this.cityImagesList = cityImagesList;
 	}
 
 	public City(Long id, String name, State state, String description, String url) {
